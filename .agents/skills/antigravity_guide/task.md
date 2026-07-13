@@ -1,0 +1,24 @@
+# Task List - MerchHub LK Phase 1 (MVP)
+
+- `[x]` Initialize project structure (frontend and backend folder setup)
+- `[x]` Backend Implementation
+  - `[x]` Initialize package.json and Prisma with SQLite provider
+  - `[x]` Build Prisma schema definitions
+  - `[x]` Setup Express.js server, middleware, and entry point (`index.js`)
+  - `[x]` Implement auth middleware, file upload middleware
+  - `[x]` Create controllers and routes (Auth, Admin, Seller, Product, Category, Order)
+  - `[x]` Run migrations and confirm database setup
+- `[x]` Frontend Implementation
+  - `[x]` Bootstrap Next.js project using Tailwind and JavaScript
+  - `[x]` Install frontend packages (zustand, axios, lucide-react)
+  - `[x]` Configure Tailwind CSS for premium theme styling
+  - `[x]` Set up Zustand stores (auth, cart)
+  - `[x]` Create common UI components (Navbar, Footer, Hero, ProductCard, ShopCard)
+  - `[x]` Build Auth pages (Login & Register with role selectors)
+  - `[x]` Build Public marketplace pages (Homepage, Public Shop, Product detail page)
+  - `[x]` Build Cart and Checkout pages (with WhatsApp URL generation to `+94774174871` / Seller's number)
+  - `[x]` Implement Dashboard components and pages (Buyer, Seller, Admin)
+- `[ ]` Verification and Walkthrough
+  - `[ ]` Verify API endpoints using a test script
+  - `[ ]` Run and manually test the application end-to-end
+  - `[ ]` Create walkthrough.md artifact

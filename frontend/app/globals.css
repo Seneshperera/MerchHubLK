@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #8b5cf6;       /* Violet 500 */
+  --color-brand-secondary: #ec4899;     /* Pink 500 */
+  --color-brand-accent: #06b6d4;        /* Cyan 500 */
+  --color-bg-dark: #0b0b0f;             /* Premium dark background */
+  --color-bg-card: #14141d;             /* Card background */
+  --color-border-card: #222232;         /* Subtle border */
+  --color-text-primary: #f3f4f6;        /* Slate 100 */
+  --color-text-secondary: #9ca3af;      /* Gray 400 */
+}
+
+:root {
+  --background: #0b0b0f;
+  --foreground: #f3f4f6;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  background: rgba(20, 20, 29, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  background: rgba(20, 20, 29, 0.45);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(20, 20, 29, 0.7);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.25);
+  transform: translateY(-4px);
+}
+
+/* Premium Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #a78bfa 0%, #ec4899 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-brand {
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+}
+
+.bg-gradient-glow {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(236, 72, 153, 0.05) 100%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0b0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222232;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
+}
