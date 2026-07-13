@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Search, Package, MapPin, Phone, Calendar, ArrowRight, ShieldAlert, Sparkles, CheckCircle2 } from 'lucide-react';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
 const HOST_URL = 'http://localhost:5000';
 
 export default function TrackOrder() {

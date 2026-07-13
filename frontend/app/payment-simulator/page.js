@@ -1,14 +1,14 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useAuthStore } from '../../store/auth';
 import axios from 'axios';
 import { CreditCard, ShieldCheck, Lock, AlertCircle, Sparkles } from 'lucide-react';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
 
-export default function PaymentSimulator() {
+function PaymentSimulatorContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const orderId = searchParams.get('orderId');
@@ -233,5 +233,17 @@ export default function PaymentSimulator() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function PaymentSimulator() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="w-8 h-8 rounded-full border-2 border-brand-primary border-t-transparent animate-spin" />
+      </div>
+    }>
+      <PaymentSimulatorContent />
+    </Suspense>
   );
 }

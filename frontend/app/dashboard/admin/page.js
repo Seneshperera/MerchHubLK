@@ -7,7 +7,7 @@ import { useAuthStore } from '../../../store/auth';
 import axios from 'axios';
 import { Check, X, ShieldAlert, FolderPlus, Trash2, Users, FolderTree, AlertCircle, Edit, RefreshCw, Sparkles, AlertTriangle, Eye, ShieldCheck } from 'lucide-react';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
 const HOST_URL = 'http://localhost:5000';
 
 export default function AdminDashboard() {

@@ -6,7 +6,7 @@ import axios from 'axios';
 import ProductCard from '../../../components/ProductCard';
 import { MapPin, Phone, Share2, LayoutGrid, MessageSquare, AlertCircle } from 'lucide-react';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
 const HOST_URL = 'http://localhost:5000';
 
 export default function PublicShopStore() {

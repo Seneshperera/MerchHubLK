@@ -9,7 +9,7 @@ import { useCartStore } from '../../../store/cart';
 import { useAuthStore } from '../../../store/auth';
 import { ShoppingCart, Phone, Tag, ChevronLeft, MapPin, BadgePercent, ShieldCheck, Heart, Star, MessageSquare, AlertTriangle, Send, X, Sparkles } from 'lucide-react';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
 const HOST_URL = 'http://localhost:5000';
 
 export default function ProductDetails() {

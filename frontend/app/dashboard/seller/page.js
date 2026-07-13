@@ -8,7 +8,7 @@ import { useCartStore } from '../../../store/cart';
 import axios from 'axios';
 import { Store, ShoppingBag, ClipboardList, Plus, Edit, Trash2, CheckCircle2, RefreshCw, X, ShieldAlert, AlertCircle, BarChart3, Ticket, AlertTriangle, MessageSquare, Send, Sparkles, Wallet, DollarSign, Package } from 'lucide-react';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
 const HOST_URL = 'http://localhost:5000';
 
 export default function SellerDashboard() {

@@ -1,14 +1,14 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import axios from 'axios';
 import ProductCard from '../../components/ProductCard';
 import { Filter, RotateCcw, AlertCircle, ShoppingBag, Search, Grid, List, SlidersHorizontal } from 'lucide-react';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
 
-export default function Browse() {
+function BrowseContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   
@@ -314,5 +314,17 @@ export default function Browse() {
       </div>
 
     </div>
+  );
+}
+
+export default function Browse() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="w-8 h-8 rounded-full border-2 border-brand-primary border-t-transparent animate-spin" />
+      </div>
+    }>
+      <BrowseContent />
+    </Suspense>
   );
 }
